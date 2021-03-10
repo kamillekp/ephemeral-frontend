@@ -1,0 +1,67 @@
+.login-container {
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2.5vh;
+}
+
+.formLogin {
+    width: max(215px, 29vw);
+    height: 80vh;
+    font: 1 20px volkhov, sans-serif;
+}
+
+.imgContainer img {
+    border-radius: 25px;
+    width: max(500px, 30vw);
+    height: 85vh;
+}
+
+.informe {
+    color: #4B4B4B;
+    margin-bottom: 8vh;
+    margin-left: 3.7vw;
+    font-size: 1.5vw;
+}
+
+.bemVindo {
+    font-size: 2.85vw;
+    color: #282828;
+    margin-top: 7vh;
+    margin-bottom: 1vh;
+}
+
+.avisoLog {
+    text-align: center;
+    font-size: 1.2vw;
+    margin-top: 2vh;
+    color: #bbb9b9;
+}
+
+.cadastre {
+    color: #4B4B4B;
+    text-align: center;
+    font-size: max(20px, 1.3vw);
+}
+
+.enterButton {
+    font-size: max(25px, 2vw);
+    background-color: #00A7A7;
+    border: #00A7A7;
+    color: #ffffff;
+    margin-left: 2.5vw;
+    margin-bottom: 1vh;
+    margin-top: 10vh;
+    width: 23vw;
+    height: 8.5vh;
+}
+
+form input {
+    color: #333333;
+    background-color: #f3f3f3;
+    border: 2px solid #c7c7c7;
+    width: 28vw;
+    height: 10vh;
+}

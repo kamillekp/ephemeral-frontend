@@ -1,0 +1,89 @@
+.register-container {
+    font: 1 20px volkhov, sans-serif;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+}
+
+h4 {
+    color: #4B4B4B;
+    font-weight: normal;
+    font-size: max(15px, 1.5vw);
+    margin-top: 5vh;
+}
+
+.card-container form {
+    border: 2px solid #acacac;
+    padding-left: 5vw;
+    padding-right: 3vw;
+    padding-bottom: 2vw;
+    border-radius: 10px;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+ 
+.card-container button {
+    font-size: max(10px, 1.7vw);
+    background-color: #00A7A7;
+    border: #00A7A7;
+    color: #ffffff;
+    margin-bottom: 1vh;
+    margin-top: 7vh;
+    width: 18vw;
+    height: 6vh;
+}
+
+.card-container .link {
+    color: #4B4B4B;
+    font-size: max(15px, 1.2vw);
+}
+
+.card-container input {
+    margin-right: 2vw;
+    width: 16vw;
+    height: 2.5vw;
+}
+
+.card-container input[type="radio"] {
+    width: 1.3vw;
+    position: relative;
+    bottom: 0.5vw;
+}
+
+.card-container input[type="checkbox"] {
+    width: 1.3vw;
+    position: relative;
+    bottom: 0.5vw;
+}
+
+.card-container label {
+    font-size: max(18px, 1.5vw);
+    margin-right: 4vw;
+    margin-left: -1vw;
+    position: relative;
+    bottom: 1.2vw;
+    color:#4B4B4B;
+}
+
+hr {
+    background-color: #acacac;
+    border: 1px solid #acacac;
+    margin-top: 3vh;
+}
+
+input::-webkit-input-placeholder {
+    font-size: max(10px, 1.2vw);
+}
+
+.questions {
+    color: #4B4B4B;
+    font-size: max(18px, 1.5vw);
+    margin-top: 5vh;
+}
+
+.sendContainer {
+    text-align: center;
+    margin-bottom: 2vh;
+}

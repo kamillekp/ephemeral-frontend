@@ -1,0 +1,23 @@
+.dicas-container p {
+    font-size: 1.3vw;
+    text-align:justify;
+    line-height: 4.5vh;
+    color:#adadad;
+    margin-bottom: 5vh;
+    margin-top: 2vh;
+    white-space: pre-wrap;
+}
+
+.dicas-container {
+    border-radius: 30px;
+    background-color: transparent;
+    border: 3px solid #cbcbcb;
+    padding: 4vw;
+    margin-top: 8vh;
+    margin-bottom: 8vh;
+}
+
+.containerPrincipal {
+    display: flex;
+    justify-content: center;
+}

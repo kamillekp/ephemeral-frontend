@@ -1,0 +1,12 @@
+.miniRodape-container {
+    background-color: rgb(10, 10, 10);
+    color: white;
+    font-size: 1vw;
+    display: flex;
+    justify-content: center;
+}
+
+.miniRodape-container p {
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+}

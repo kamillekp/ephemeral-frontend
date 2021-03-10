@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Volkhov:ital@1&display=swap');
+
+/*MENU GERAL*/
+.iconHelp {
+    margin-left: 1.5vw;
+    margin-top: 0.3vw;
+}
+
+.siteTitle {
+    font-size: max(30px, 2vw);
+    margin-right: 20vw;
+}
+
+/*GERAL*/
+* {
+    margin:0;
+    padding:0;
+    outline:0;
+    box-sizing:border-box;
+}
+
+body {
+    height: 100%;
+    font: 300 15px Roboto, sans-serif;
+    background: #f3f3f3;
+    -webkit-font-smoothing:antialiased;
+}
+
+input, button, textarea {
+    font: 300 18px Roboto, sans-serif;
+}
+
+button {
+    cursor:pointer;
+    border-radius: 100px;
+}
+
+form input {
+    margin-top: 3vh;
+    border-radius: 100px;
+    padding: 0 2vw;
+}
+
+input::-webkit-input-placeholder {
+    font-size: max(20px, 1.5vw);
+}
+
+.link {
+    text-decoration: none;
+}
+

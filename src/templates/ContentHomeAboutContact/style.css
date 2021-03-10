@@ -1,0 +1,24 @@
+.contentHomeHelp-container {
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1vh;
+}
+
+.contentHomeHelp-container ul {
+    list-style: none;
+    display:flex;
+    flex-direction: row;
+}
+
+.link {
+    color: #ffff;
+}
+
+.contentHomeHelp-container ul li{
+    line-height: 8vh;
+    font-size: min(1.7vw);
+    margin-left: 1.2vw;
+}
+
+

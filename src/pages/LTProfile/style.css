@@ -1,0 +1,50 @@
+#maisMargin {
+    margin-bottom: 3vh;
+}
+
+.buttonContainer { 
+    display:grid;
+    border: 2px solid #acacac;
+    border-radius: 10px;
+    margin-right: 0vw;
+    margin-right: 2vw;
+    margin-top: 5vh;
+    padding: 4vh 3vw 2vh 3vw;
+}
+
+.fileContainer { 
+    height: 4vh;
+    padding: 0px;
+    width: 10vw;
+    margin-bottom: 1vh;
+    border-radius: 0px;
+    margin-left: 2vw;
+    border: 2px solid #00A7A7;
+}
+
+.inputMsg {
+    border-radius: 20px;
+    border: 2px solid #00A7A7;
+    background-color: transparent;
+    padding: 15px;
+    margin-top: 2vh;
+    width: 15vw;
+    height: 10vw;
+    color: #818181;
+}
+
+.buttonEnvia {
+    padding: 5px;
+    font-size: 1vw;
+    border-radius: 15px;
+    width: 15vw;
+    border: transparent;
+    background-color: #00A7A7;
+    color: white;
+}
+
+.reg {
+    text-align: center;
+    font-size: 1vw;
+    margin-bottom: -1vh;
+}

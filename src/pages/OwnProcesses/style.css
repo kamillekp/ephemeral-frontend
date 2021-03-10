@@ -1,0 +1,92 @@
+.containerMaximum {
+    background-color: #f3f3f3;
+    padding-top: 7vh;
+    padding-bottom: 7vh;
+    display: flex;
+    justify-content: center;
+    font: 300 20px volkhov, sans-serif;
+}
+
+.cardContainers {
+    background-color: #00A7A7;
+    border-radius: 10px;
+    width: 80vw;
+}
+
+.abas-container {
+    background-color: #ffffff;
+    border-radius: 10px 10px 0px 0px;
+    border: 2px solid #acacac;
+    color: #acacac;
+    height: 6vh;
+    line-height: 5.6vh;
+    margin-bottom: 0vh;
+}
+
+.twoAbas {
+    display: flex;
+    justify-content: space-around;
+}
+
+li {
+    list-style: none;
+}
+
+.containerLis {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 1.2vw;
+    height: 80vh;
+    color: #4b4b4b;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.containerLis li {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 1vw;
+    margin: 1.5vw;
+    font-size: 1vw;
+    height: 20vh;
+    width: 16vw;
+    
+}
+
+.buttonsProcess {
+    font-size: 0.8vw;
+    margin-right: 0.8vw;
+    margin-top: 1vh;
+    padding-bottom: 2px;
+    width: 5vw;
+    height: 3.5vh;
+    border: transparent;
+    background-color: #00A7A7;
+    color: #ffffff;
+}
+
+.containerLis li p {
+    margin-bottom: 0.5vw;
+}
+
+.linkCard {
+    text-decoration: none;
+    color: #4b4b4b;
+
+}
+
+.pagesButton {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
+
+.pagesButton button {
+    border: none;
+    padding: 0.5vw;
+    width: 7.5vw;
+    color: #acacac;
+    margin-bottom: 3vh;
+    margin-top: 2vh;
+}
