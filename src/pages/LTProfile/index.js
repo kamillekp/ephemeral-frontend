@@ -96,7 +96,7 @@ export default function LTProfile () {
                 </div>
 
                 <div className="buttonContainer">
-                    <a href= {`https://wa.me/${tel}`}><button className="wBack">WathsApp</button></a>
+                    <a href= {`https://wa.me/${tel}`} target='_blank'><button className="wBack">WhatsApp</button></a>
                     <div>
                         <button onClick={openProcess} className="wBack">Registrar processo</button>
                         {verificaProc === true && (
