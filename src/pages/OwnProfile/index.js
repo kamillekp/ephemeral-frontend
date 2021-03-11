@@ -41,7 +41,6 @@ export default function  MyProfile () {
     async function deleteProfile () {
         try {
             if(window.confirm('Certeza que deseja deletar seu perfil?')) {
-                const id = localStorage.getItem('Token');
                 await api.delete(`user/settings/delete/${id}`);
                 localStorage.clear();
                 history.push('/');
