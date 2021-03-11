@@ -76,7 +76,7 @@ export default function TakeProcesses () {
             <div className="containerMaximum">
                 <div className="cardContainers">
                     <div className="abas-container">
-                        {processPT.length !== 0 && (processLTEA.length !== 0 || processLTC !== 0) && (
+                        {processPT.length !== 0 && (processLTEA.length !== 0 || processLTC.length !== 0) && (
                             <div className="twoAbas">
                                 <div onClick={verificarPT} className="p">
                                     PROTETOR
