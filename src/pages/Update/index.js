@@ -573,7 +573,6 @@ export default function Update() {
 
                         <div className="sendContainer">
                             <button type="submit" value="submit">Enviar</button>
-                            <Link to ="/" className="link"><p>Já possui uma conta? Entre</p></Link>
                         </div>
                     </form>  
                 </div>  

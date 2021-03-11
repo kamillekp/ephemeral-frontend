@@ -36,7 +36,7 @@ export default function  MyProfile () {
         }
         takeOwnProfile();
         takeComent();
-    },  [])
+    },  []);
 
     async function deleteProfile () {
         try {
