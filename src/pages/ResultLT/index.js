@@ -56,7 +56,7 @@ export default function ResultLT () {
                 )}
                 {profiles.length !== 0 && (
                     <ul>
-                        <div className='textresultlt'>Esses são os lares temporários encontrados...</div>
+                        <div className='textresultlt'>Esses são os lares temporários encontrados...</div> <br/>
                         {profiles.map(profile =>
                             <Card profile={profile} key={profile.idUser}/>
                         )}
