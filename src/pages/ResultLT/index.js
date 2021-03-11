@@ -47,6 +47,7 @@ export default function ResultLT () {
             <Menu content={ContentHeaderLogado}/>
 
             <div className="results-container">
+                <div className='textresultlt'>Esses são os lares temporários encontrados...</div>
                 {profiles.length === 0 && (
                     <div className='greenBack'>
                         <div className='containerNoResults'>

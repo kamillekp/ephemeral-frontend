@@ -5,6 +5,9 @@
     display: flex;
     justify-content: center;
     font: 300 20px volkhov, sans-serif;
+    height: 80vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .results-container ul {
@@ -70,5 +73,10 @@
     line-height: 15vh;
     font-family: roboto;
     color: #cbcbcb;
+}
+
+.textresultlt {
+    color: white;
+    font-size: 2vw;
 }
 
