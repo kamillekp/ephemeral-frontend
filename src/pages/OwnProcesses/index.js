@@ -99,6 +99,13 @@ export default function TakeProcesses () {
                                     PROTETOR
                                 </div>
                             </div>
+                        )}  
+                        {atividade === 'Inativo' && processLTEA.length === 0 && processLTC.length === 0 && (
+                            <div onClick={verificarPT} className="twoAbas">
+                                <div className="p">
+                                    PROTETOR
+                                </div>
+                            </div>
                         )}      
                     </div>
 
