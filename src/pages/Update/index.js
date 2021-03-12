@@ -27,7 +27,7 @@ export default function Update() {
     const [dividDespesas, setDespesas] = useState('');
 
     const [validaAtiv, setValidaAtiv] = useState('');
-    const [idade, setIdade] = useState('');
+    const [idade, setIdade] = useState(18);
     var dataNascimento = dataNasc.split('-');
 
     const history = useHistory();
