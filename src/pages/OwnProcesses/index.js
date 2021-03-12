@@ -1,16 +1,17 @@
 import React, {useEffect, useState} from 'react';
+import { useHistory } from 'react-router-dom';
 import api from '../../Services/api';
 import './style.css';
 
 import Menu from '../../templates/Menu';
 import ContentHeaderLogado from '../../templates/ContentHeaderLogado';
+import ContentHomeHelp from '../../templates/ContentHomeHelp';
 import Rodape from '../../templates/Rodape';
 import ContentRodape1 from '../../templates/ContentRodape1';
 import Rodape2 from '../../templates/Rodape2';
 import CardEA from '../../templates/CardEA';
 import CardProt from '../../templates/CardProt';
 import CardC from '../../templates/CardC';
-import { useHistory } from 'react-router-dom';
 
 export default function TakeProcesses () {
     const [verifica, setVerifica] = useState('');
