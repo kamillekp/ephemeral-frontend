@@ -183,7 +183,7 @@ export default function Update() {
                         value={dataNasc}
                         onChange={e => setDataNascimento(e.target.value)}/>
                         {idade < 18 && idade !== '' && (
-                            <div className='avisoCont'>
+                            <div className='aviso-cont'>
                                 <p className='aviso'>Os usuários devem ser maiores de 18 anos</p>
                             </div>
                         )}
