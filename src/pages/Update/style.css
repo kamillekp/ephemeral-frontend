@@ -92,7 +92,7 @@ input::-webkit-input-placeholder {
     display: flex;
     justify-content: flex-start;
     position: absolute;
-    left: 35%;
+    left: 45%;
     max-width: 340px;
     font-size: 0.8vw;
     color: #acacac;
