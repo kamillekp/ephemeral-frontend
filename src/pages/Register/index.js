@@ -192,7 +192,7 @@ export default function Register() {
                         value={email}
                         onChange={e => setEmail(e.target.value)}/>
 
-                        <input type="text" placeholder="Nome Sobrenome" maxLength="30" required pattern='[A-Z]{1}[a-zãõíá]+\s[A-Z]{1}[a-zãõíá]+' title='Nome e sobrenome // letras maiúsculas no início'
+                        <input type="text" placeholder="Nome Sobrenome" maxLength="30" required 
                         value={nome}
                         onChange={e => setNome(e.target.value)}/> <br/>
                         {forEmail === true && (

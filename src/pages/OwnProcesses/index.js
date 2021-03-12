@@ -27,7 +27,7 @@ export default function TakeProcesses () {
         if(!id) {
             history.push('/error');
         }
-
+        
         async function takeAtualizarProcess () {
             const responseP = await api.get(`process/search/protetor/${id}`);
             console.log('P',responseP.data)
@@ -93,14 +93,7 @@ export default function TakeProcesses () {
                                 </div>
                             </div>
                         )} 
-                        {atividade === 'Ativo' && processLTEA.length === 0 && processLTC.length === 0 && (
-                            <div onClick={verificarPT} className="twoAbas">
-                                <div className="p">
-                                    PROTETOR
-                                </div>
-                            </div>
-                        )}  
-                        {atividade === 'Inativo' && processLTEA.length === 0 && processLTC.length === 0 && (
+                        {processLTEA.length === 0 && processLTC.length === 0 && (
                             <div onClick={verificarPT} className="twoAbas">
                                 <div className="p">
                                     PROTETOR

@@ -188,7 +188,7 @@ export default function Update() {
                             </div>
                         )}
 
-                        <input type="text" placeholder="Nome completo" maxLength="30" required pattern='[A-Z]{1}[a-z]+\s[A-Z]{1}[a-z]+' title='Nome e sobrenome // letras maiúsculas no início'
+                        <input type="text" placeholder="Nome completo" maxLength="30" required 
                         value={nome}
                         onChange={e => setNome(e.target.value)}/> <br/>
 
