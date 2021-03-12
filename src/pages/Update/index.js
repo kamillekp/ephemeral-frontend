@@ -111,7 +111,7 @@ export default function Update() {
             console.log(dataLT);
             localStorage.setItem('Atividade', atividade);
 
-            if(idade > 18) {
+            if(idade >= 18) {
                 await api.put(`user/settings/update/${id}`, dataProtetor);
                 await api.put(`lt/settings/update/${id}`, dataLT);
                 history.push('/myProfile');
