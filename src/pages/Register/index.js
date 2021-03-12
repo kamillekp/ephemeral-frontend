@@ -131,9 +131,12 @@ export default function Register() {
                     dividirDespesas}
             }
 
-            if(forEmail !== true && forNome !== true) {
+            if(forEmail !== true && forNome !== true && idade >= 18) {
                 await api.post('user', {nomeUser, senha, email, dataNascimento, ddd, numeroTel, nome, cidade, bairro, estado, complemento, atividade, opcaoTipoAnimal, opcaoSexo, ajudaEmergencia, opcaoAnimalEspecial, dividirDespesas, tamAnimal})          
                 history.push('/');  
+            }
+            else {
+                alert('Dados pendentes.')
             }
         }
         catch(err){

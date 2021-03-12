@@ -72,7 +72,12 @@ export default function Update() {
                 estado,
                 complemento}
 
-            await api.put(`user/settings/update/${id}`, dataProtetor);
+            if(idade > 18) {
+                await api.put(`user/settings/update/${id}`, dataProtetor);
+            }
+            else {
+                alert('Os usuários da plataforma devem ter 18 anos ou mais.')
+            }
             
             if (ativ === 'Ativo' && opTipoAnimal!=="" && opSexo!=="" && ajEmergencia!=="" && opAnimalEspecial!=="" && dividDespesas!=="") {
                 console.log('Entrou A')    
