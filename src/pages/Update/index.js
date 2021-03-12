@@ -72,12 +72,6 @@ export default function Update() {
                 estado,
                 complemento}
 
-            if(idade > 18) {
-                await api.put(`user/settings/update/${id}`, dataProtetor);
-            }
-            else {
-                alert('Os usuários da plataforma devem ter 18 anos ou mais.')
-            }
             
             if (ativ === 'Ativo' && opTipoAnimal!=="" && opSexo!=="" && ajEmergencia!=="" && opAnimalEspecial!=="" && dividDespesas!=="") {
                 console.log('Entrou A')    
@@ -117,8 +111,14 @@ export default function Update() {
             console.log(dataLT);
             localStorage.setItem('Atividade', atividade);
 
-            await api.put(`lt/settings/update/${id}`, dataLT);
-            history.push('/myProfile');
+            if(idade > 18) {
+                await api.put(`user/settings/update/${id}`, dataProtetor);
+                await api.put(`lt/settings/update/${id}`, dataLT);
+                history.push('/myProfile');
+            }
+            else {
+                alert('Os usuários da plataforma devem ter 18 anos ou mais.')
+            }
         }
         catch(err) {
             alert('Erro ao atualizar. Tente novamente!')
