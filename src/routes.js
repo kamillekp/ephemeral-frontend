@@ -12,7 +12,6 @@ import OwnProfile from './pages/OwnProfile';
 import LtProfile from './pages/LTProfile';
 import OwnProcesses from './pages/OwnProcesses';
 import NoAcces from './pages/NoAccess';
-import NoProcess from './pages/NoProcess';
 
 export default function Routes(){
    return(
@@ -28,7 +27,6 @@ export default function Routes(){
                 <Route path = "/ltProfile/:idUser" component={LtProfile}/>
                 <Route path = "/myProcesses" component={OwnProcesses}/>
                 <Route path = "/error" component={NoAcces}/>
-                <Route path = "/noProcess" component={NoProcess}/>
             </Switch>
        </BrowserRouter> 
     )

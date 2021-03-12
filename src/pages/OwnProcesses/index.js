@@ -14,6 +14,7 @@ import { useHistory } from 'react-router-dom';
 
 export default function TakeProcesses () {
     const [verifica, setVerifica] = useState('');
+    const [verif, setVerif] = useState('');
     const [processPT, setProcessPT] = useState([]);
     const [processLTEA, setProcessLTEA] = useState([]);
     const [processLTC, setProcessLTC] = useState([])
@@ -48,7 +49,10 @@ export default function TakeProcesses () {
             setProcessLTC(responseLTC.data);
 
             if(a.length === 0 && b.length === 0 && c.length === 0) {
-                history.push('noProcess');
+                setVerif(false);
+            }
+            else {
+                setVerif(true);
             }
 
             if(atividade === 'Ativo' && (c.length !== 0 || b.length !== 0)) {
@@ -71,61 +75,80 @@ export default function TakeProcesses () {
 
     return (
         <div>
-            <Menu content={ContentHeaderLogado}/>
+            {verif === true && (
+                <div>
+                    <Menu content={ContentHeaderLogado}/>
 
-            <div className="containerMaximum">
-                <div className="cardContainers">
-                    <div className="abas-container">
-                        {processPT.length !== 0 && (processLTEA.length !== 0 || processLTC.length !== 0) && (
-                            <div className="twoAbas">
-                                <div onClick={verificarPT} className="p">
-                                    PROTETOR
-                                </div>
-                                <div onClick={verificarLT} className="ltp">
-                                    LAR TEMPORÁRIO
-                                </div>
+                    <div className="containerMaximum">
+                        <div className="cardContainers">
+                            <div className="abas-container">
+                                {processPT.length !== 0 && (processLTEA.length !== 0 || processLTC.length !== 0) && (
+                                    <div className="twoAbas">
+                                        <div onClick={verificarPT} className="p">
+                                            PROTETOR
+                                        </div>
+                                        <div onClick={verificarLT} className="ltp">
+                                            LAR TEMPORÁRIO
+                                        </div>
+                                    </div>
+                                )}
+                                {atividade === 'Ativo' && processPT.length === 0 && (
+                                    <div onClick={verificarLT} className="twoAbas">
+                                        <div className="ltp">
+                                            LAR TEMPORÁRIO
+                                        </div>
+                                    </div>
+                                )} 
+                                {processLTEA.length === 0 && processLTC.length === 0 && (
+                                    <div onClick={verificarPT} className="twoAbas">
+                                        <div className="p">
+                                            PROTETOR
+                                        </div>
+                                    </div>
+                                )}      
                             </div>
-                        )}
-                        {atividade === 'Ativo' && processPT.length === 0 && (
-                            <div onClick={verificarLT} className="twoAbas">
-                                <div className="ltp">
-                                    LAR TEMPORÁRIO
-                                </div>
+
+                            <div >
+                                {verifica === true && (
+                                    <ul className="containerLis">
+                                        {processPT.map(card =>
+                                            <CardProt process={card} key={card.idProcesso}/>
+                                        )}
+                                    </ul>
+                                )}
+                                {verifica === false && (
+                                    <ul className="containerLis">
+                                        {processLTEA.map(card =>
+                                            <CardEA process={card} key={card.idProcesso}/>
+                                        )}
+                                        {processLTC.map(card =>
+                                            <CardC process={card} key={card.idProcesso}/>
+                                        )}
+                                    </ul>
+                                )}
                             </div>
-                        )} 
-                        {processLTEA.length === 0 && processLTC.length === 0 && (
-                            <div onClick={verificarPT} className="twoAbas">
-                                <div className="p">
-                                    PROTETOR
-                                </div>
-                            </div>
-                        )}      
+                        </div>
                     </div>
 
-                    <div >
-                        {verifica === true && (
-                            <ul className="containerLis">
-                                {processPT.map(card =>
-                                    <CardProt process={card} key={card.idProcesso}/>
-                                )}
-                            </ul>
-                        )}
-                        {verifica === false && (
-                            <ul className="containerLis">
-                                {processLTEA.map(card =>
-                                    <CardEA process={card} key={card.idProcesso}/>
-                                )}
-                                {processLTC.map(card =>
-                                    <CardC process={card} key={card.idProcesso}/>
-                                )}
-                            </ul>
-                        )}
+                    <Rodape content={ContentRodape1}/>
+                    <Rodape2/> 
+                </div>     
+            )}
+            {verif === false && (
+                <div>
+                    <Menu content={ContentHomeHelp}/>
+
+                    <div className='error-container'>
+                        <div className="quadradoAlert"> 
+                            <p className='exclamacao'> ! <br/> 
+                                <p className='errorContainer'> ERROR <br/> 
+                                    <p className='textContainer'> Você não tem permissão para acessar a página.</p>
+                                </p>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        
-            <Rodape content={ContentRodape1}/>
-            <Rodape2/>
+            )}
         </div>
     );
 }
