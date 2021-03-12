@@ -75,62 +75,34 @@ export default function Register() {
         var data;
 
         try {
-            if(ativ==="Ativo" && opTipoAnimal!=="" && opSexo!=="" && ajEmergencia!=="" && opAnimalEspecial!=="" && dividDespesas!=="") {
-                atividade = 'Ativo';
-                opcaoTipoAnimal = opTipoAnimal;
-                opcaoSexo = opSexo;
-                ajudaEmergencia = ajEmergencia;
-                opcaoAnimalEspecial = opAnimalEspecial;
-                dividirDespesas = dividDespesas;
+            atividade = ativ;
+            opcaoTipoAnimal = opTipoAnimal;
+            opcaoSexo = opSexo;
+            ajudaEmergencia = ajEmergencia;
+            opcaoAnimalEspecial = opAnimalEspecial;
+            dividirDespesas = dividDespesas;
 
-                data = {
-                    nomeUser,
-                    senha,
-                    email, 
-                    dataNascimento,
-                    ddd,
-                    numeroTel,
-                    nome, 
-                    cidade,
-                    bairro,
-                    estado,
-                    complemento,
-                    atividade,
-                    opcaoTipoAnimal,
-                    opcaoSexo,
-                    ajudaEmergencia,
-                    opcaoAnimalEspecial,
-                    dividirDespesas}
-            }
-            else {
-                atividade = 'Inativo';
-                opcaoTipoAnimal = '';
-                opcaoSexo = '';
-                ajudaEmergencia = '';
-                opcaoAnimalEspecial = '';
-                dividirDespesas = '';
-                tamAnimal = '';
-                
-                data = {
-                    nomeUser,
-                    senha,
-                    email, 
-                    dataNascimento,
-                    ddd,
-                    numeroTel,
-                    nome, 
-                    cidade,
-                    bairro,
-                    estado,
-                    complemento,
-                    atividade,
-                    opcaoTipoAnimal,
-                    opcaoSexo,
-                    ajudaEmergencia,
-                    opcaoAnimalEspecial,
-                    dividirDespesas}
+            data = {
+                nomeUser,
+                senha,
+                email, 
+                dataNascimento,
+                ddd,
+                numeroTel,
+                nome, 
+                cidade,
+                bairro,
+                estado,
+                complemento,
+                atividade,
+                opcaoTipoAnimal,
+                opcaoSexo,
+                ajudaEmergencia,
+                opcaoAnimalEspecial,
+                dividirDespesas
             }
 
+            console.log(forEmail, forNome, idade)
             if(forEmail !== true && forNome !== true && idade >= 18) {
                 await api.post('user', {nomeUser, senha, email, dataNascimento, ddd, numeroTel, nome, cidade, bairro, estado, complemento, atividade, opcaoTipoAnimal, opcaoSexo, ajudaEmergencia, opcaoAnimalEspecial, dividirDespesas, tamAnimal})          
                 history.push('/');  
