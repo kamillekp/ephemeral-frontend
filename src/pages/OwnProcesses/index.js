@@ -141,9 +141,9 @@ export default function TakeProcesses () {
 
                     <div className='error-container'>
                         <div className="quadradoAlert"> 
-                            <p className='exclamacao'> ! <br/> 
-                                <p className='errorContainer'> ERROR <br/> 
-                                    <p className='textContainer'> Você não tem permissão para acessar a página.</p>
+                            <p className='exclamacao'> ? <br/> 
+                                <p className='errorContainer'> NOT FOUND <br/> 
+                                    <p className='textContainer'> Você não possui processos cadastrados.</p>
                                 </p>
                             </p>
                         </div>
