@@ -285,7 +285,7 @@ export default function Register() {
 
                                 <p className="questions">Você tem condições para dividir ou ajudar com as despesas sobre os cuidados do animal?</p>
                                 <input type="radio" id="tem" name="despesa" 
-                                value="Tem condições de dividir as despesas do anima"
+                                value="Tem condições de dividir as despesas do animal"
                                 onChange={e => setDespesas(e.target.value)}/>
                                 <label for="tem">Sim</label>
 
