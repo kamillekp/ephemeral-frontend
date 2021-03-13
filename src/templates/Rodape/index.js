@@ -6,7 +6,6 @@ export default function Rodape ({content}) {
     return (
             <div className="rodape-container">
                 <Content/>
-                <div className="blankSpace3">aaa</div>
             </div>
     );
 }
