@@ -1,7 +1,7 @@
 .results-container {
     background-color: #f3f3f3;
-    padding-top: 7vh;
-    padding-bottom: 5vh;
+    padding-top: 6vh;
+    padding-bottom: 7vh;
     display: flex;
     justify-content: center;
     font: 300 20px volkhov, sans-serif;
@@ -79,6 +79,6 @@
     color: #757575;
     font-size: 1.5vw;
     margin-bottom: 1vh;
-    margin-left: 0.7vw;
+    margin-left: 0.8vw;
 }
 
