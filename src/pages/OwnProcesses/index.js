@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import { useHistory } from 'react-router-dom';
 import api from '../../Services/api';
 import './style.css';
 
@@ -20,14 +19,13 @@ export default function TakeProcesses () {
     const [processLTEA, setProcessLTEA] = useState([]);
     const [processLTC, setProcessLTC] = useState([])
 
-
+    const [verificaToken, setToken] = useState(true);
     const id = localStorage.getItem('Token');
     const atividade = localStorage.getItem('Atividade');
-    const history = useHistory();
 
     useEffect (() => {
         if(!id) {
-            history.push('/error');
+            setToken(false);
         }
         
         async function takeAtualizarProcess () {
@@ -76,74 +74,98 @@ export default function TakeProcesses () {
 
     return (
         <div>
-            {verif === true && (
+            {verificaToken === true && (
                 <div>
-                    <Menu content={ContentHeaderLogado}/>
+                    {verif === true && (
+                        <div>
+                            <Menu content={ContentHeaderLogado}/>
 
-                    <div className="containerMaximum">
-                        <div className="cardContainers">
-                            <div className="abas-container">
-                                {processPT.length !== 0 && (processLTEA.length !== 0 || processLTC.length !== 0) && (
-                                    <div className="twoAbas">
-                                        <div onClick={verificarPT} className="p">
-                                            PROTETOR
-                                        </div>
-                                        <div onClick={verificarLT} className="ltp">
-                                            LAR TEMPORÁRIO
-                                        </div>
+                            <div className="containerMaximum">
+                                <div className="cardContainers">
+                                    <div className="abas-container">
+                                        {processPT.length !== 0 && (processLTEA.length !== 0 || processLTC.length !== 0) && (
+                                            <div className="twoAbas">
+                                                <div onClick={verificarPT} className="p">
+                                                    PROTETOR
+                                                </div>
+                                                <div onClick={verificarLT} className="ltp">
+                                                    LAR TEMPORÁRIO
+                                                </div>
+                                            </div>
+                                        )}
+                                        {atividade === 'Ativo' && processPT.length === 0 && (
+                                            <div onClick={verificarLT} className="twoAbas">
+                                                <div className="ltp">
+                                                    LAR TEMPORÁRIO
+                                                </div>
+                                            </div>
+                                        )} 
+                                        {processLTEA.length === 0 && processLTC.length === 0 && (
+                                            <div onClick={verificarPT} className="twoAbas">
+                                                <div className="p">
+                                                    PROTETOR
+                                                </div>
+                                            </div>
+                                        )}      
                                     </div>
-                                )}
-                                {atividade === 'Ativo' && processPT.length === 0 && (
-                                    <div onClick={verificarLT} className="twoAbas">
-                                        <div className="ltp">
-                                            LAR TEMPORÁRIO
-                                        </div>
+
+                                    <div >
+                                        {verifica === true && (
+                                            <ul className="containerLis">
+                                                {processPT.map(card =>
+                                                    <CardProt process={card} key={card.idProcesso}/>
+                                                )}
+                                            </ul>
+                                        )}
+                                        {verifica === false && (
+                                            <ul className="containerLis">
+                                                {processLTEA.map(card =>
+                                                    <CardEA process={card} key={card.idProcesso}/>
+                                                )}
+                                                {processLTC.map(card =>
+                                                    <CardC process={card} key={card.idProcesso}/>
+                                                )}
+                                            </ul>
+                                        )}
                                     </div>
-                                )} 
-                                {processLTEA.length === 0 && processLTC.length === 0 && (
-                                    <div onClick={verificarPT} className="twoAbas">
-                                        <div className="p">
-                                            PROTETOR
-                                        </div>
-                                    </div>
-                                )}      
+                                </div>
                             </div>
 
-                            <div >
-                                {verifica === true && (
-                                    <ul className="containerLis">
-                                        {processPT.map(card =>
-                                            <CardProt process={card} key={card.idProcesso}/>
-                                        )}
-                                    </ul>
-                                )}
-                                {verifica === false && (
-                                    <ul className="containerLis">
-                                        {processLTEA.map(card =>
-                                            <CardEA process={card} key={card.idProcesso}/>
-                                        )}
-                                        {processLTC.map(card =>
-                                            <CardC process={card} key={card.idProcesso}/>
-                                        )}
-                                    </ul>
-                                )}
+                            <Rodape content={ContentRodape1}/>
+                            <Rodape2/> 
+                        </div>     
+                    )}
+                    {verif === false && (
+                        <div>
+                            <Menu content={ContentHomeHelp}/>
+
+                            <div className='error-container'>
+                                <div className="quadradoAlert"> 
+                                    <p className='exclamacao'> ? <br/> 
+                                        <p className='errorContainer'> NOT FOUND <br/> 
+                                            <p className='textContainer'> Você não possui processos cadastrados.</p>
+                                        </p>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <Rodape content={ContentRodape1}/>
-                    <Rodape2/> 
-                </div>     
+                    )}
+                </div>
             )}
-            {verif === false && (
+
+
+
+
+            {verificaToken === false && (
                 <div>
                     <Menu content={ContentHomeHelp}/>
 
                     <div className='error-container'>
                         <div className="quadradoAlert"> 
-                            <p className='exclamacao'> ? <br/> 
-                                <p className='errorContainer'> NOT FOUND <br/> 
-                                    <p className='textContainer'> Você não possui processos cadastrados.</p>
+                            <p className='exclamacao'> ! <br/> 
+                                <p className='errorContainer'> ERROR <br/> 
+                                    <p className='textContainer'> Você não tem permissão para acessar a página.</p>
+                                    <p className='backLogin'><Link to='/' className='link'>Clique aqui para voltar para a tela de Login.</Link></p>
                                 </p>
                             </p>
                         </div>
