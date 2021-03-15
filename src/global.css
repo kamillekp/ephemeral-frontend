@@ -50,3 +50,37 @@ input::-webkit-input-placeholder {
     text-decoration: none;
 }
 
+.error-container {
+    display: flex;
+    justify-content: center;
+    font-family: roboto;
+    color: #cbcbcb;
+}
+
+.quadradoAlert {
+    background-color: transparent;
+    border: 3px solid #acacac;
+    width: 50vw;
+    height: 30vw;
+    margin-top: 13vh;
+    border-radius: 15px;
+    text-align: center;
+
+    font-size: 10vw;
+}
+
+.exclamacao {
+    margin-top: 5vh;
+}
+
+.errorContainer {
+    font-size: 8vw;
+}
+
+.textContainer {
+    font-size: 1.5vw;
+}
+
+.backLogin {
+    font-size: 1vw;
+}

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
 import api from '../../Services/api';
 import './style.css';
 
@@ -7,18 +8,19 @@ import Rodape from '../../templates/Rodape';
 import ContentRodape1 from '../../templates/ContentRodape1';
 import Rodape2 from '../../templates/Rodape2';
 import ContentHeaderLogado from '../../templates/ContentHeaderLogado';
+import ContentHomeHelp from '../../templates/ContentHomeHelp';
 import Card from '../../templates/CardLT'
-import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function ResultLT () {
     const [profiles, setProfiles] = useState([]);
 
+    const [verificaToken, setToken] = useState(true);
     const id = localStorage.getItem('Token');
-    const history = useHistory();
 
     useEffect (()=> {  
         if(!id) {
-            history.push('/error');
+            setToken(false);
         }
 
         async function takeProfiles () {
@@ -44,30 +46,54 @@ export default function ResultLT () {
 
     return (
         <div>
-            <Menu content={ContentHeaderLogado}/>
+            {verificaToken === true && (
+                <div>
+                    <Menu content={ContentHeaderLogado}/>
 
-            <div className="results-container">
-                {profiles.length === 0 && (
-                    <div className='greenBack'>
-                        <div className='containerNoResults'>
-                            NÃO HÁ LARES TEMPORÁRIOS <br/> NESSA REGIÃO
+                    <div className="results-container">
+                        {profiles.length === 0 && (
+                            <div className='greenBack'>
+                                <div className='containerNoResults'>
+                                    NÃO HÁ LARES TEMPORÁRIOS <br/> NESSA REGIÃO
+                                </div>
+                            </div>
+                        )}
+                        {profiles.length !== 0 && (
+                            <div>
+                                <div className='textresultlt'>Esses são os lares temporários encontrados...</div> 
+                                <ul>
+                                    {profiles.map(profile =>
+                                        <Card profile={profile} key={profile.idUser}/>
+                                    )}
+                                </ul>
+                            </div>
+                        )}
+                    </div>
+
+                    <Rodape content={ContentRodape1}/>
+                    <Rodape2/>
+                </div>
+            )}
+
+
+
+            {verificaToken === false && (
+                <div>
+                    <Menu content={ContentHomeHelp}/>
+
+                    <div className='error-container'>
+                        <div className="quadradoAlert"> 
+                            <p className='exclamacao'> ! <br/> 
+                                <p className='errorContainer'> ERROR <br/> 
+                                    <p className='textContainer'> Você não tem permissão para acessar a página.</p>
+                                    <p className='backLogin'><Link to='/' className='link'>Clique aqui para voltar para a tela de Login.</Link></p>
+                                </p>
+                            </p>
                         </div>
                     </div>
-                )}
-                {profiles.length !== 0 && (
-                    <div>
-                        <div className='textresultlt'>Esses são os lares temporários encontrados...</div> 
-                        <ul>
-                            {profiles.map(profile =>
-                                <Card profile={profile} key={profile.idUser}/>
-                            )}
-                        </ul>
-                    </div>
-                )}
-            </div>
-
-            <Rodape content={ContentRodape1}/>
-            <Rodape2/>
+                </div>
+            )}
+            
         </div>
     );
 }
