@@ -47,7 +47,7 @@ export default function Help() {
 
     
                     <p>
-                        <b>Quem pode ser um lar temporário?</b> Qualquer cidadão que tenha mais que 18 nos pode atuar como voluntário no site.
+                        <b>Quem pode ser um lar temporário?</b> Qualquer cidadão que tenha mais que 18 anos pode atuar como voluntário na plataforma.
                     </p>
                     
                 </div>
