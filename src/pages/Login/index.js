@@ -54,11 +54,11 @@ export default function Login () {
                     <p className="informe">Informe os dados solicitados abaixo</p>
                     
                     <form onSubmit={logar}>
-                        <input type="text" placeholder="@username" maxLength='10' required 
+                        <input type="text" placeholder="@username" maxLength='15' required 
                         value={nomeUser}
                         onChange={e => setUserName(e.target.value)}/><br/>
 
-                        <input type="password" placeholder="Senha" maxLength='8' required 
+                        <input type="password" placeholder="Senha" maxLength='15' required 
                         value={senha}
                         onChange={e => setSenha(e.target.value)}/> <br/>
 
