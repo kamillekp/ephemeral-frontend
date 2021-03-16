@@ -80,9 +80,3 @@ input::-webkit-input-placeholder {
 .textContainer {
     font-size: 1.5vw;
 }
-
-.backLogin {
-    font-size: 1vw;
-    text-decoration: none;
-    color: #808080;
-}

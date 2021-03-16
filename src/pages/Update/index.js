@@ -604,7 +604,6 @@ export default function Update() {
                             <p className='exclamacao'> ! <br/> 
                                 <p className='errorContainer'> ERROR <br/> 
                                     <p className='textContainer'> Você não tem permissão para acessar a página.</p>
-                                    <p className='backLogin'><Link to='/'>Clique aqui para voltar para a tela de Login.</Link></p>
                                 </p>
                             </p>
                         </div>
