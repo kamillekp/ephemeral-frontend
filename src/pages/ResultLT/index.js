@@ -10,7 +10,6 @@ import Rodape2 from '../../templates/Rodape2';
 import ContentHeaderLogado from '../../templates/ContentHeaderLogado';
 import ContentHomeHelp from '../../templates/ContentHomeHelp';
 import Card from '../../templates/CardLT'
-import { Link } from 'react-router-dom';
 
 export default function ResultLT () {
     const [profiles, setProfiles] = useState([]);
