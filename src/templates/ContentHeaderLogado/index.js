@@ -10,7 +10,7 @@ export default function ContentHeaderLogado () {
                 <ul >
                     <Link to="/home" className="link"><li className="link">Home</li></Link>
                     <Link to="/myProfile" className="link"><li className="link">Perfil</li></Link>
-                    <Link to="/problems" className="link"><li className="link">Relatar problemas</li></Link>
+                    <Link to="/problems" className="link"><li className="link">Reclamações</li></Link>
                     <li className="iconHelp"><Link to = "/help" className="link"><MdHelp size={30}/></Link></li>
                 </ul>
             </div>
