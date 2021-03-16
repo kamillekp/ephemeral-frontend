@@ -163,7 +163,7 @@ export default function Register() {
                         
                         <br/>
 
-                        <input type="email" placeholder="email@gmail.com" maxLength="30" required pattern='^[a-z0-9._]+@gmail.com$' title='prefixo@gmail.com' onBlur={testeEmail}
+                        <input type="email" placeholder="email@gmail.com" maxLength="30" required pattern='^[a-z0-9._]+@gmail.com$' title='prefixo@gmail.com // deve inciar com letra minúscula' onBlur={testeEmail}
                         value={email}
                         onChange={e => setEmail(e.target.value)}/>
 
