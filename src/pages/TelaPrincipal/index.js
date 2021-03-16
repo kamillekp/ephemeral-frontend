@@ -59,7 +59,7 @@ export default function Home() {
 
                             <div className="formAlign">
                                 <form method="post" onSubmit={pesquisa}>
-                                    <input type="text" placeholder="UF (estado)" maxLength='2' required pattern='[A-Z]{2}' title='Apenas Letras maiúsculas'
+                                    <input type="text" placeholder="UF (estado)" maxLength='2' required pattern='[A-Za-z]{2}' title='Apenas Letras maiúsculas'
                                     value={estado}
                                     onChange={e => setEstado(e.target.value)}></input>
 
