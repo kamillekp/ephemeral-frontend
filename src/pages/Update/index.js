@@ -184,11 +184,11 @@ export default function Update() {
                         <div>
                             <form method="put" onSubmit={atualizar}>
                                 <h4>Dados pessoais</h4>
-                                <input type="password" placeholder="Senha" maxLength="8" pattern='[A-Za-z0-9]+' title='Apenas números e letras'
+                                <input type="password" placeholder="Senha" maxLength="15" pattern='[A-Za-z0-9]+' title='Apenas números e letras'
                                 value={senha}
                                 onChange={e => setSenha(e.target.value)}/> 
     
-                                <input type="date" placeholder="Data de nascimento" required onBlur={testaIdade}
+                                <input type="date" placeholder="Data de nascimento" pattern='\d{2}\/\d{2}\/\d{4}' required onBlur={testaIdade}
                                 value={dataNasc}
                                 onChange={e => setDataNascimento(e.target.value)}/>
                                 {idade < 18 && idade !== '' && (
@@ -197,7 +197,7 @@ export default function Update() {
                                     </div>
                                 )}
     
-                                <input type="text" placeholder="Nome completo" maxLength="30" required 
+                                <input type="text" placeholder="Nome completo" maxLength="70" required 
                                 value={nome}
                                 onChange={e => setNome(e.target.value)}/> <br/>
     
@@ -209,18 +209,19 @@ export default function Update() {
                                 value={numeroTel}
                                 onChange={e => setNumTel(e.target.value)}/> 
     
+                                <input type="text" placeholder="Estado (UF)" maxLength="2" required pattern='[A-Z]{2}' title='Apenas letras maiúsculas'
+                                value={estado}
+                                onChange={e => setEstado(e.target.value)}/> 
+                                
                                 <h4>Endereço</h4>
-                                <input type="text" placeholder="Cidade" maxLength="30" required 
+                                <input type="text" placeholder="Cidade" maxLength="70" required 
                                 value={cidade}
                                 onChange={e => setCidade(e.target.value)}/>
     
-                                <input type="text" placeholder="Bairro" maxLength="30" required 
+                                <input type="text" placeholder="Bairro" maxLength="70" required 
                                 value={bairro}
-                                onChange={e => setBairro(e.target.value)}/> 
-    
-                                <input type="text" placeholder="Estado (UF)" maxLength="2" required pattern='[A-Z]{2}' title='Apenas letras maiúsculas'
-                                value={estado}
-                                onChange={e => setEstado(e.target.value)}/> <br/>
+                                onChange={e => setBairro(e.target.value)}/> <br/>
+                               
     
                                 <h4>Complemento</h4>
                                 {complemento === 'Casa' && (

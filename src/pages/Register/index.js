@@ -139,11 +139,11 @@ export default function Register() {
                 <div>
                     <form method="post" onSubmit={registrar}>
                         <h4>Dados pessoais</h4>
-                        <input type="text" placeholder="@username" maxLength="10" minLength="2" required pattern='@{1}[\wãõáí]+' title='@ obrigatório' onBlur={testeNome}
+                        <input type="text" placeholder="@username" maxLength="15" minLength="2" required pattern='@{1}[\wãõáí.]+' title='@ obrigatório no início' onBlur={testeNome}
                         value={nomeUser}
                         onChange={e => setUserName(e.target.value)}/> 
                     
-                        <input type="password" placeholder="Senha" maxLength="8" required pattern='[A-Za-z0-9]+' title='Apenas números e letras'
+                        <input type="password" placeholder="Senha" maxLength="15" required pattern='[A-Za-z0-9]+' title='Apenas números e letras'
                         value={senha}
                         onChange={e => setSenha(e.target.value)}/> 
 
@@ -163,11 +163,11 @@ export default function Register() {
                         
                         <br/>
 
-                        <input type="email" placeholder="email@gmail.com" maxLength="30" required pattern='^[a-z0-9._]+@gmail.com$' title='prefixo@gmail.com // deve inciar com letra minúscula' onBlur={testeEmail}
+                        <input type="email" placeholder="email@gmail.com" maxLength="100" required pattern='^[a-z0-9._]+@gmail.com$' title='prefixo@gmail.com // deve inciar com letra minúscula' onBlur={testeEmail}
                         value={email}
                         onChange={e => setEmail(e.target.value)}/>
 
-                        <input type="text" placeholder="Nome Sobrenome" maxLength="30" required 
+                        <input type="text" placeholder="Nome Sobrenome" maxLength="70" required 
                         value={nome}
                         onChange={e => setNome(e.target.value)}/> <br/>
                         {forEmail === true && (
@@ -190,11 +190,11 @@ export default function Register() {
                         value={estado}
                         onChange={e => setEstado(e.target.value)}/> 
 
-                        <input type="text" placeholder="Cidade" maxLength="30" required 
+                        <input type="text" placeholder="Cidade" maxLength="70" required 
                         value={cidade}
                         onChange={e => setCidade(e.target.value)}/>
 
-                        <input type="text" placeholder="Bairro" maxLength="30" required 
+                        <input type="text" placeholder="Bairro" maxLength="70" required 
                         value={bairro}
                         onChange={e => setBairro(e.target.value)}/> <br/>
                  
