@@ -38,7 +38,7 @@ export default function Help() {
                     </p>
 
                     <p>
-                        <b>Quais os atores do sistem?</b> Temos dois usuários: os responsáveis pelo animal (entidade individual ou ONG) e <br/> os voluntários a lar temporário. 
+                        <b>Quais os atores do sistema?</b> Temos dois usuários: os responsáveis pelo animal (entidade individual ou ONG) e <br/> os voluntários a lar temporário. 
                     </p>
 
                     <p>
