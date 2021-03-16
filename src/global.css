@@ -83,4 +83,6 @@ input::-webkit-input-placeholder {
 
 .backLogin {
     font-size: 1vw;
+    text-decoration: none;
+    color: #808080;
 }
