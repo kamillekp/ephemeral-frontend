@@ -33,7 +33,6 @@ export default function LTProfile () {
         }
         async function takeComents () {
             const response = await api.get(`coment/search/destinatariolt/${idUser}`);
-            console.log(response.data);
             setComent(response.data);
         }
         takeProfileLT();
@@ -54,7 +53,7 @@ export default function LTProfile () {
 
     async function comment (e) {
         try {
-            console.log(id + '    ' + idUser + '     ' + texto);
+            console.log(id, idUser, texto)
             await api.post(`coment/${id}/user/${idUser}`, {texto});
             alert('Comentário realizado.')
         }
@@ -100,9 +99,11 @@ export default function LTProfile () {
                             </div>
                             <div>
                                 <form onSubmit={comment}>
-                                    <textarea required type="text" placeholder="Deixei sua avaliação" className="inputMsg" maxLength='300'
+                                    <textarea required type="text" placeholder="Deixe sua avaliação" className="inputMsg" maxLength='300'
                                     value={texto}
-                                    onChange={e => setText(e.target.value)}/><br/>
+                                    onChange={e => setText(e.target.value)}/>
+                                    
+                                    <br/>
                         
                                     <button type="submit" value="submit" className="buttonEnvia">Enviar</button>
                                 </form>
