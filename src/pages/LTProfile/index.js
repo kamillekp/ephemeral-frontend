@@ -53,8 +53,8 @@ export default function LTProfile () {
 
     async function comment () {
         try {
+            console.log(idUser, id, texto);
             if(window.confirm(`Deseja mesmo enviar essa avaliação para o perfil de ${profileLT.nome}?`)) {
-                alert(idUser);
                 await api.post(`coment/${id}/user/${idUser}`, {texto});
                 alert('Comentário realizado.');
             }
@@ -73,6 +73,7 @@ export default function LTProfile () {
                     <div className="perfil-container" id="maisMargin">    
                         <div className="infos-container">
                             <div className="about">
+                                {console.log(coment)}
                                 <h5>Sobre</h5>
                                 <p>Moradia: {profileLT.complemento}</p>
                                 <p>{profileLT.estado} - {profileLT.cidade}</p>
