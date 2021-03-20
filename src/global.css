@@ -33,12 +33,12 @@ input, button, textarea {
 
 button {
     cursor:pointer;
-    border-radius: 100px;
+    border-radius: 10px;
 }
 
 form input {
     margin-top: 3vh;
-    border-radius: 100px;
+    border-radius: 10px;
     padding: 0 2vw;
 }
 

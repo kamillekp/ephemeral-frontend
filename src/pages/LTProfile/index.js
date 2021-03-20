@@ -83,11 +83,11 @@ export default function LTProfile () {
                             </div>
                             <div className="preferencias">
                                 <h5>Preferências</h5>
-                                <p>{profileLT.opcaoTipoAnimal}</p>
-                                <p>{profileLT.opcaoSexo}</p>
-                                {profileLT.opcaoAnimalEspecial !== 'Não' && (<p>{profileLT.opcaoAnimalEspecial}</p>)}
-                                {profileLT.ajudaEmergencia !== 'Não' && (<p>{profileLT.ajudaEmergencia}</p>)}
-                                {profileLT.dividirDespesas !== 'Não' && (<p>{profileLT.dividirDespesas}</p>)}
+                                <p>- {profileLT.opcaoTipoAnimal}</p>
+                                <p>- {profileLT.opcaoSexo}</p>
+                                {profileLT.opcaoAnimalEspecial !== 'Não' && (<p>- {profileLT.opcaoAnimalEspecial}</p>)}
+                                {profileLT.ajudaEmergencia !== 'Não' && (<p>- {profileLT.ajudaEmergencia}</p>)}
+                                {profileLT.dividirDespesas !== 'Não' && (<p>- {profileLT.dividirDespesas}</p>)}
                             </div>
                         </div>
 
@@ -98,7 +98,7 @@ export default function LTProfile () {
                         </div>
 
                         <div className="buttonContainer">
-                            <a href= {`https://wa.me/${tel}`} target='_blank'><button className="wBack">WhatsApp</button></a>
+                            <a href= {`https://wa.me/${tel}`} target='_blank'><button className="wBack" id='whatsApp'>WhatsApp</button></a>
                             <div>
                                 <button onClick={openProcess} className="wBack">Registrar processo</button>
                                 {verificaProc === true && (

@@ -8,18 +8,18 @@
 }
 
 .cardContainers {
-    background-color: #00A7A7;
+    background-color: transparent;
+    border: 2px solid #cbcbcb;
     border-radius: 10px;
     width: 80vw;
 }
 
 .abas-container {
-    background-color: #ffffff;
+    background-color: #00A7A7;
     border-radius: 10px 10px 0px 0px;
-    border: 2px solid #acacac;
-    color: #acacac;
-    height: 6vh;
-    line-height: 5.6vh;
+    color: white;
+    height: 7vh;
+    line-height: 7vh;
     margin-bottom: 0vh;
 }
 
@@ -36,7 +36,7 @@ li {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     padding: 1.2vw;
-    height: 80vh;
+    height: 75vh;
     color: #4b4b4b;
     overflow-y: scroll;
     overflow-x: hidden;

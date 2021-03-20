@@ -76,11 +76,11 @@ export default function  MyProfile () {
                             {profile.atividade === 'Ativo' && (
                                 <div className="preferencias">
                                     <h5>Preferências</h5>
-                                    <p>{profile.opcaoTipoAnimal}</p>
-                                    <p>{profile.opcaoSexo}</p>
-                                    {profile.opcaoAnimalEspecial !== 'Não' && (<p>{profile.opcaoAnimalEspecial}</p>)}
-                                    {profile.ajudaEmergencia !== 'Não' && (<p>{profile.ajudaEmergencia}</p>)}
-                                    {profile.dividirDespesas !== 'Não' && (<p>{profile.dividirDespesas}</p>)}
+                                    <p>- {profile.opcaoTipoAnimal}</p>
+                                    <p>- {profile.opcaoSexo}</p>
+                                    {profile.opcaoAnimalEspecial !== 'Não' && (<p>- {profile.opcaoAnimalEspecial}</p>)}
+                                    {profile.ajudaEmergencia !== 'Não' && (<p>- {profile.ajudaEmergencia}</p>)}
+                                    {profile.dividirDespesas !== 'Não' && (<p>- {profile.dividirDespesas}</p>)}
                                 </div>
                             )}  
                         </div>

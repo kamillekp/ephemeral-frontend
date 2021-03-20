@@ -17,14 +17,13 @@
 
 .infos-container p {
     font-size: max(1.3vw);
-    margin-bottom: 1vh;
+    margin-bottom: 1.5vh;
 }
 
 .preferencias {
     border: 2px solid #acacac;
     border-radius: 10px;
     margin-top: 3vh;
-    margin-bottom: 5vh;
     padding: 1.5vw;
     width: 30.5vw;
 }
@@ -58,11 +57,11 @@
 .button-container {
     display:grid;
     border: 2px solid #acacac;
-    height: 67vh;
+    height: 68vh;
     border-radius: 10px;
     margin-right: 1vw;
     margin-top: 5vh;
-    margin-bottom: 5vh;
+    margin-bottom: 4vh;
     padding: 3vh 3vw 3vh 3vw;
 }
 
@@ -75,7 +74,7 @@
 }
 
 .wBack1 {
-    margin-top: 4vh;
+    margin-top: 7vh;
     background-color: #00A7A7;
     border: 0px;
     width: 15vw;
@@ -97,7 +96,7 @@
     color: #00A7A7;
     width: 15vw;
     height: 7.5vh;
-    margin-bottom: -3vh;
+    margin-bottom: 1vh;
 }
 
 .coments-container {

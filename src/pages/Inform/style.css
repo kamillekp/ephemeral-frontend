@@ -1,0 +1,48 @@
+.img_Container img {
+    border-radius: 25px;
+    width: max(500px, 30vw);
+    margin-top: 2.3vh;
+    height: 80vh;
+}
+
+.diferentao {
+    margin-bottom: 2vh;
+    margin-top: 10vh;
+}
+
+.textareaReclame {
+    border-radius: 10px;
+    border: 2px solid #cbcbcb;
+    padding: 1vw;
+    width: 28vw;
+    height: 23vh;
+    color: #4b4b4b;
+    background-color: transparent;
+}
+
+.buttonAAA {
+    border-radius: 10px;
+    font-size: 1.5vw;
+    background-color: #00A7A7;
+    border: #00A7A7;
+    color: #ffffff;
+    margin-left: 3.5vw;
+    margin-bottom: 1vh;
+    margin-top: 5vh;
+    width: 20vw;
+    height: 6vh;
+}
+
+.textinho {
+    font-size: 2.2vw;
+    color: #282828;
+    margin-top: 7vh;
+    margin-bottom: 1vh;
+}
+
+.informeAAA {
+    color: #4B4B4B;
+    margin-top: 2vh;
+    margin-left: 3.7vw;
+    font-size: 1.5vw;
+}

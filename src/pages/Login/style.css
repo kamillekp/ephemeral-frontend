@@ -16,7 +16,8 @@
 .imgContainer img {
     border-radius: 25px;
     width: max(500px, 30vw);
-    height: 85vh;
+    margin: 2.5vh;
+    height: 80vh;
 }
 
 .informe {
@@ -59,7 +60,7 @@
 }
 
 form input {
-    color: #333333;
+    color: #4b4b4b;
     background-color: #f3f3f3;
     border: 2px solid #c7c7c7;
     width: 28vw;
