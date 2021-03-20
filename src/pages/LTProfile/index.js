@@ -53,8 +53,10 @@ export default function LTProfile () {
 
     async function comment () {
         try {
-            await api.post(`coment/${id}/user/${idUser}`, {texto});
-            alert('Comentário realizado.')
+            if(window.confirm(`Deseja mesmo enviar essa avaliação para o perfil de ${profileLT.nome}?`)) {
+                await api.post(`coment/${id}/user/${idUser}`, {texto});
+                alert('Comentário realizado.');
+            }
         }
         catch (err) {
             alert('Erro ao realizar comentário. Tente novamente.')
