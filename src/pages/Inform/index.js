@@ -26,7 +26,12 @@ export default function Claims () {
 
     async function reclamar () {
         try {
-            const response = await api.post('reclameAqui', {texto, email});
+            const data = {
+                email, 
+                texto
+            }
+
+            const response = await api.post('reclameAqui', data);
             alert(response.data);
         }
         catch(error) {

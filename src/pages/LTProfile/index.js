@@ -17,8 +17,6 @@ export default function LTProfile () {
     const [coment, setComent] = useState([]);
     const [tel, setTel] = useState('');
 
-    const [verificaProc, setVerificaProc] = useState('');
-    const [verificaComent, setVerificaComent] = useState('');
     const [verificaToken, setVerToken] = useState(true);
 
     const id = localStorage.getItem('Token');
@@ -43,27 +41,25 @@ export default function LTProfile () {
     },  [idUser]);
 
     async function openProcess (e) {
-        e.preventDefault();
         try {
             if(window.confirm('Deseja mesmo registrar um processo com esse lt?')) {
                 api.post(`process/${id}/${idUser}`);
-                setVerificaProc(true);
+                alert('Processo registrado.');
             }
         }
         catch (err) {
-            setVerificaProc(false);
+            alert('Erro ao realizar registro. Tente novamente.')
         }
     };
 
     async function comment (e) {
-        e.preventDefault();
         try {
             console.log(id + '    ' + idUser + '     ' + texto);
             await api.post(`coment/${id}/user/${idUser}`, {texto});
-            setVerificaComent(true);
+            alert('Comentário realizado.')
         }
         catch (err) {
-            setVerificaComent(false);
+            alert('Erro ao realizar comentário. Tente novamente.')
         }
     };
 
@@ -101,16 +97,6 @@ export default function LTProfile () {
                             <a href= {`https://wa.me/${tel}`} target='_blank'><button className="wBack" id='whatsApp'>WhatsApp</button></a>
                             <div>
                                 <button onClick={openProcess} className="wBack">Registrar processo</button>
-                                {verificaProc === true && (
-                                    <div className='reg'>
-                                        Registro concluído.
-                                    </div>
-                                )}
-                                {verificaProc === false && (
-                                    <div className='reg'>
-                                        Tente novamente.
-                                    </div>
-                                )}
                             </div>
                             <div>
                                 <form onSubmit={comment}>
@@ -120,16 +106,6 @@ export default function LTProfile () {
                         
                                     <button type="submit" value="submit" className="buttonEnvia">Enviar</button>
                                 </form>
-                                {verificaComent === true && (
-                                    <div className='reg'>
-                                        Comentário realizado.
-                                    </div>
-                                )}
-                                {verificaComent === false && (
-                                    <div className='reg'>
-                                        Tente novamente.
-                                    </div>
-                                )}
                             </div>                
                         </div>
                     </div>
