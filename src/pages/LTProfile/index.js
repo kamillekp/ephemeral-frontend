@@ -39,10 +39,10 @@ export default function LTProfile () {
         takeComents();
     },  [idUser]);
 
-    async function openProcess (e) {
+    async function openProcess () {
         try {
             if(window.confirm('Deseja mesmo registrar um processo com esse lt?')) {
-                api.post(`process/${id}/${idUser}`);
+                await api.post(`process/${id}/${idUser}`);
                 alert('Processo registrado.');
             }
         }
@@ -51,9 +51,8 @@ export default function LTProfile () {
         }
     };
 
-    async function comment (e) {
+    async function comment () {
         try {
-            console.log(id, idUser, texto)
             await api.post(`coment/${id}/user/${idUser}`, {texto});
             alert('Comentário realizado.')
         }
