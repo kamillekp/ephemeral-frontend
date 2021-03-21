@@ -37,7 +37,7 @@ export default function LTProfile () {
         }
         takeProfileLT();
         takeComents();
-    },  [idUser]);
+    },  []);
 
     async function openProcess () {
         try {
