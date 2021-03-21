@@ -22,16 +22,11 @@ export default function Claims () {
         teste();
     }, []);
 
-    async function reclamar () {
+    async function reclamar (e) {
+        e.preventDefault()
         try {
-            alert('oi');
-            const data = {
-                texto, 
-                email
-            }
-
-            await api.post('reclameAqui', data);
-            alert('Reclamação registrada.');
+            const response = await api.post('reclameAqui', {texto, email});
+            alert(response.data);
         }
         catch(error) {
             alert('Não foi possível registrar a reclamação. Tente novamente.')
@@ -63,8 +58,7 @@ export default function Claims () {
                                 onChange={e => setTexto(e.target.value)}/> 
                                 
                                 <br/>
-                                {console.log(texto, email)}
-                                <button type="submit" value="submit" className="buttonAAA">Entrar</button>
+                                <button type="submit" value="submit" className="buttonAAA">Enviar</button>
                             </form>
                         </div>
                     </div>
