@@ -31,8 +31,8 @@ export default function Claims () {
                 texto
             }
 
-            const response = await api.post('reclameAqui', data);
-            alert(response.data);
+            await api.post('reclameAqui', data);
+            alert('Reclamação registrada.');
         }
         catch(error) {
             alert('Não foi possível registrar a reclamação. Tente novamente.')
