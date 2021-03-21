@@ -5,9 +5,6 @@ import api from '../../Services/api';
 import Menu from '../../templates/Menu';
 import ContentHomeHelp from '../../templates/ContentHomeHelp';
 import ContentHeaderLogado from '../../templates/ContentHeaderLogado';
-import Rodape from '../../templates/Rodape';
-import ContentRodape1 from '../../templates/ContentRodape1';
-import Rodape2 from '../../templates/Rodape2';
 import dog from '../../assets/doguinho.jpeg';
 
 export default function Claims () {
@@ -22,13 +19,15 @@ export default function Claims () {
                 setVerifica(false);
             }
         }
-    }, [])
+        teste();
+    }, []);
 
     async function reclamar () {
         try {
+            alert('oi');
             const data = {
-                email, 
-                texto
+                texto, 
+                email
             }
 
             await api.post('reclameAqui', data);
@@ -41,9 +40,9 @@ export default function Claims () {
 
     return (
         <div>
-            <Menu content={ContentHeaderLogado}/>
             {verifica === true && (
                 <div>
+                    <Menu content={ContentHeaderLogado}/>
                     <div className="login-container">
                         <div className="img_Container">
                         <img src={dog} alt="Gato"/>
@@ -53,7 +52,7 @@ export default function Claims () {
                             <p className="informeAAA">Informe os dados solicitados abaixo</p>
                             
                             <form onSubmit={reclamar}>
-                                <input type="email" placeholder="email@gmail.com" required className='diferentao'
+                                <input type="email" placeholder="email@gmail.com" required className='diferentao' pattern='^[a-z0-9._]+@gmail.com$' title='prefixo@gmail.com // deve inciar com letra minúscula'
                                 value={email}
                                 onChange={e => setEmail(e.target.value)}/>
                                 
@@ -64,7 +63,7 @@ export default function Claims () {
                                 onChange={e => setTexto(e.target.value)}/> 
                                 
                                 <br/>
-    
+                                {console.log(texto, email)}
                                 <button type="submit" value="submit" className="buttonAAA">Entrar</button>
                             </form>
                         </div>
