@@ -11,10 +11,11 @@
 .contato {
     margin-top: 5vh;
     text-align: center;
+    height: 15vh;
 }
 
 #contact {
-    margin-bottom: 1.5vw;
+    margin-bottom: 2vh;
 }
 
 .redes {
@@ -27,7 +28,7 @@
 }
 
 .redes p{
-    margin-bottom: 1.5vw;
+    margin-bottom: 3vh;
     text-align: center;
 }
 

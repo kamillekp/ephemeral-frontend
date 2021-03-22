@@ -8,7 +8,7 @@ export default function ContentRodape1 () {
         <div className="rodapeContainer">
             <div className="contato">
                 <p id="contact">Contate-nos</p>
-                <a href="https://mail.google.com/" classname="link">app.ephemeral.v1@gmail.com</a>
+                <a href="https://mail.google.com/" classname="link" id="emailUser">app.ephemeral.v1@gmail.com</a> 
                 <p><a href={`https://wa.me/5551995215473`} classname="link">Número para contato</a></p>
             </div>
             <div className="redes">
