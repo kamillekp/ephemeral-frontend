@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import { useHistory, Link } from "react-router-dom";
-import { FiSearch } from "react-icons/fi";
+import { useHistory } from "react-router-dom";
+import { FiSearch, FiLogOut } from "react-icons/fi";
 import './style.css';
 
 import Menu from '../../templates/Menu';
@@ -54,7 +54,7 @@ export default function Home() {
                         <div className="img">
                             <div className="itensImg">
                                 <p>Encontre um novo <br/> amigo para te ajudar <br/> nesse resgate animal</p>
-                                <button className="loginButton" onClick={deslogar}>Logout</button>
+                                <button className="loginButton" onClick={deslogar}>sair <FiLogOut size={20}/></button>
                             </div>
 
                             <div className="formAlign">

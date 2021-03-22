@@ -72,7 +72,6 @@ export default function Register() {
 
         dataNascimento = dataNascimento[2] + '/' + dataNascimento[1] + '/' + dataNascimento[0];
         var atividade, opcaoTipoAnimal, opcaoSexo, ajudaEmergencia, opcaoAnimalEspecial, dividirDespesas, tamAnimal;
-        var data;
 
         try {
             atividade = ativ;
@@ -81,26 +80,6 @@ export default function Register() {
             ajudaEmergencia = ajEmergencia;
             opcaoAnimalEspecial = opAnimalEspecial;
             dividirDespesas = dividDespesas;
-
-            data = {
-                nomeUser,
-                senha,
-                email, 
-                dataNascimento,
-                ddd,
-                numeroTel,
-                nome, 
-                cidade,
-                bairro,
-                estado,
-                complemento,
-                atividade,
-                opcaoTipoAnimal,
-                opcaoSexo,
-                ajudaEmergencia,
-                opcaoAnimalEspecial,
-                dividirDespesas
-            }
 
             console.log(forEmail, forNome, idade)
             if(forEmail !== true && forNome !== true && idade >= 18) {

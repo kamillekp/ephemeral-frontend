@@ -12,6 +12,7 @@ import OwnProfile from './pages/OwnProfile';
 import LtProfile from './pages/LTProfile';
 import OwnProcesses from './pages/OwnProcesses';
 import Reclamar from './pages/Inform';
+import NewPassword from './pages/NewPassword';
 
 export default function Routes(){
    return(
@@ -27,6 +28,7 @@ export default function Routes(){
                 <Route path = "/ltProfile/:idUser" component={LtProfile}/>
                 <Route path = "/myProcesses" component={OwnProcesses}/>
                 <Route path = "/problems" component={Reclamar}/>
+                <Route path = "/newPassword" component={NewPassword}/>
             </Switch>
        </BrowserRouter> 
     )

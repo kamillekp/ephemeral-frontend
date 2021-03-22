@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import api from '../../Services/api';
 import './style.css';
 
@@ -96,7 +96,7 @@ export default function LTProfile () {
                         </div>
 
                         <div className="buttonContainer">
-                            <a href= {`https://wa.me/${tel}`} target='_blank'><button className="wBack" id='whatsApp'>WhatsApp</button></a>
+                            <a href= {`https://wa.me/${tel}`} target='_blank' rel="noreferrer"><button className="wBack" id='whatsApp'>WhatsApp</button></a>
                             <div>
                                 <button onClick={openProcess} className="wBack">Registrar processo</button>
                             </div>

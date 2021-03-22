@@ -48,15 +48,15 @@
 }
 
 .enterButton {
-    font-size: max(25px, 2vw);
+    font-size: 2vw;
     background-color: #00A7A7;
     border: #00A7A7;
     color: #ffffff;
-    margin-left: 2.5vw;
+    margin-left: 6.5vw;
     margin-bottom: 1vh;
     margin-top: 10vh;
-    width: 23vw;
-    height: 8.5vh;
+    width: 15vw;
+    height: 7vh;
 }
 
 form input {

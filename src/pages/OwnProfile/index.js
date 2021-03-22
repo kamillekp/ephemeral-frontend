@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { Link, useHistory } from "react-router-dom";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { FiLayout, FiLogOut } from "react-icons/fi";
 import api from '../../Services/api';
 import './style.css';
 

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Link, useHistory } from "react-router-dom";
+import { FiLogIn } from "react-icons/fi";
 import api from '../../Services/api';
 import './style.css';
 
@@ -64,12 +65,13 @@ export default function Login () {
 
                         {auth === false && (
                             <div className='avisoLog'>
-                                 Nome de usuário e/ou senha inválidos.
+                                 Nome de usuário e/ou senha inválido(s).
                             </div>
                         )}
                     
-                        <button type="submit" value="submit" className="enterButton">Entrar</button>
+                        <button type="submit" value="submit" className="enterButton">Entrar <FiLogIn size={22}/></button>
                         <Link to ="/register" className="link"><p className="cadastre">Não tem uma conta? cadastre-se</p></Link>
+                        <Link to ="/newPassword" className="link"><p className="cadastre">Esqueceu sua senha?</p></Link>
                     </form>
                 </div>
             </div>

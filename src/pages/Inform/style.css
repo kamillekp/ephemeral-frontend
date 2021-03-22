@@ -7,7 +7,7 @@
 
 .diferentao {
     margin-bottom: 2vh;
-    margin-top: 10vh;
+    margin-top: 7vh;
 }
 
 .textareaReclame {
@@ -28,14 +28,14 @@
     color: #ffffff;
     margin-left: 3.5vw;
     margin-bottom: 1vh;
-    margin-top: 5vh;
+    margin-top: 3vh;
     width: 20vw;
     height: 6vh;
 }
 
 .textinho {
     font-size: 2.2vw;
-    color: #282828;
+    color: #3b3b3b;
     margin-top: 7vh;
     margin-bottom: 1vh;
 }
@@ -43,6 +43,13 @@
 .informeAAA {
     color: #4B4B4B;
     margin-top: 2vh;
-    margin-left: 3.7vw;
+    margin-left: 4vw;
+    font-size: 1.5vw;
+}
+
+.informeAAA2 {
+    color: #4B4B4B;
+    margin-top: 2vh;
+    margin-left: 8vw;
     font-size: 1.5vw;
 }
