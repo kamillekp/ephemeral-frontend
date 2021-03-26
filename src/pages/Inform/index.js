@@ -36,53 +36,37 @@ export default function Claims () {
     return (
         <div>
             {verifica === true && (
-                <div>
-                    <Menu content={ContentHeaderLogado}/>
-                    <div className="login-container">
-                        <div className="img_Container">
-                        <img src={dog} alt="Gato"/>
-                        </div>
-                        <div className="formLogin">
-                            <p className="textinho">Faça seu comentário aqui!</p>
-                            <p className="informeAAA">Informe o seu email</p>
-                            <p className="informeAAA2">e faça sua pergunta/avaliação</p>
-                            
-                            <form onSubmit={reclamar}>
-                                <input type="email" placeholder="email@gmail.com" required className='diferentao' pattern='^[a-z0-9._]+@gmail.com$' title='prefixo@gmail.com // deve inciar com letra minúscula'
-                                value={email}
-                                onChange={e => setEmail(e.target.value)}/>
-                                
-                                <br/>
-
-                                <textarea type="text" placeholder="Escreva o seu comentário aqui" maxLength='300' required className='textareaReclame'
-                                value={texto}
-                                onChange={e => setTexto(e.target.value)}/> 
-                                
-                                <br/>
-                                <button type="submit" value="submit" className="buttonAAA">Enviar</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                <Menu content={ContentHeaderLogado}/>
             )}
-
-
             {verifica === false && (
-                <div>
-                    <Menu content={ContentHomeHelp}/>
-
-                    <div className='error-container'>
-                        <div className="quadradoAlert"> 
-                            <p className='exclamacao'> ! <br/> 
-                                <p className='errorContainer'> ERROR <br/> 
-                                    <p className='textContainer'> Você não tem permissão para acessar a página.</p>
-                                </p>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <Menu content={ContentHomeHelp}/>
             )}
+
+            <div className="login-container">
+                <div className="img_Container">
+                <img src={dog} alt="Gato"/>
+                </div>
+                <div className="formLogin">
+                    <p className="textinho">Faça seu comentário aqui!</p>
+                    <p className="informeAAA">Informe o seu email</p>
+                    <p className="informeAAA2">e faça sua pergunta/avaliação</p>
+                    
+                    <form onSubmit={reclamar}>
+                        <input type="email" placeholder="email@gmail.com" required className='diferentao' pattern='^[a-z0-9._]+@gmail.com$' title='prefixo@gmail.com // deve inciar com letra minúscula'
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}/>
                         
-        </div>
+                        <br/>
+
+                        <textarea type="text" placeholder="Escreva o seu comentário aqui" maxLength='300' required className='textareaReclame'
+                        value={texto}
+                        onChange={e => setTexto(e.target.value)}/> 
+                        
+                        <br/>
+                        <button type="submit" value="submit" className="buttonAAA">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>            
     );
 }

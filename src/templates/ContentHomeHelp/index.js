@@ -8,6 +8,7 @@ export default function ContentHomeHelp () {
             <div className="contentHomeHelp-container">
                 <Link to='/' className='link'><div className="siteTitle">EPHEMERAL</div></Link>
                 <ul >
+                    <Link to="/problems" className="link"><li className="link">Relatos</li></Link>
                     <li className="iconHelp"><Link to = "/help" className="link"><MdHelp size={30}/></Link></li>
                 </ul>
             </div>

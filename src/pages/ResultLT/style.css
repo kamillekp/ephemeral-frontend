@@ -29,7 +29,7 @@
     width: 17vw;
     margin-right: 1.5vw;
     margin-left: 1.5vw;
-    height: 20vw;
+    height: 21vw;
 }
 
 .results-container p {
@@ -40,10 +40,11 @@
 
 .imgSearch {
     background-color: #cbcbcb;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 10px;
+    height: 12vw;
     width: 10vw;
-    height: 10vw;
-    margin: 1vw;
+    margin-top: 2vh;
+    margin-bottom: 1vh;
 }
 
 .results-container .tri {

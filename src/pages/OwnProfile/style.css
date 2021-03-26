@@ -38,12 +38,11 @@
 }
 
 .imgfake {
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 10px;
     background-color: #cbcbcb;
-    width: 15vw;
-    height: 15vw;
+    width: 16vw;
+    height: 18vw;
     margin: 1vw;
-    border-radius: 50%;
 }
 
 .centerProfile {
