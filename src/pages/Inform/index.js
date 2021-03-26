@@ -26,7 +26,7 @@ export default function Claims () {
         e.preventDefault()
         try {
             const response = await api.post('reclameAqui', {texto, email});
-            alert(response.data);
+            alert('Registrado.');
         }
         catch(error) {
             alert('Não foi possível registrar a reclamação. Tente novamente.')

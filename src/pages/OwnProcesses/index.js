@@ -137,7 +137,7 @@ export default function TakeProcesses () {
                     )}
                     {verif === false && (
                         <div>
-                            <Menu content={ContentHomeHelp}/>
+                            <Menu content={ContentHeaderLogado}/>
 
                             <div className='error-container'>
                                 <div className="quadradoAlert"> 
