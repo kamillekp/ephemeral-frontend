@@ -16,6 +16,7 @@ import ContentHomeHelp from '../../templates/ContentHomeHelp';
 export default function  MyProfile () {
     const [profile, setProfile] = useState('');
     const [coment, setComent] = useState([]);
+    const [imagem, setImagem] = useState('')
 
     const [verificaToken, setToken] = useState(true);
     const id = localStorage.getItem('Token');
@@ -36,9 +37,15 @@ export default function  MyProfile () {
            console.log(response.data);
            setComent(response.data);
         }
+        async function takeImageProfile () {
+            const response = await api.get(`user/ownImagens/${id}`);
+            console.log(response.data);
+            setImagem(response.data);
+        }
         takeOwnProfile();
         takeComent();
-    },  []);
+        takeImageProfile();
+    },  [id]);
 
     async function deleteProfile () {
         try {
@@ -86,7 +93,7 @@ export default function  MyProfile () {
                         </div>
 
                         <div className="centerProfile">
-                            <div className='imgfake'></div>
+                            <img src={imagem.url} className='imgfake'></img>
                             <p>{profile.nome}</p>
                             <p>{profile.nomeUser}</p>
                         </div>

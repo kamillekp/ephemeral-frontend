@@ -25,13 +25,10 @@ h4 {
 }
  
 .card-container button {
-    font-size: max(10px, 1.7vw);
-    background-color: #00A7A7;
-    border: #00A7A7;
+    font-size: 1.7vw;
     color: #ffffff;
     margin-bottom: 1vh;
     margin-top: 7vh;
-    width: 18vw;
     height: 6vh;
 }
 
@@ -40,9 +37,9 @@ h4 {
     font-size: max(15px, 1.2vw);
 }
 
-.card-container input {
+.oInpute {
     margin-right: 2vw;
-    width: 14.7vw;
+    width: 14vw;
     height: 2.5vw;
 }
 
@@ -73,9 +70,6 @@ hr {
     margin-top: 3vh;
 }
 
-input::-webkit-input-placeholder {
-    font-size: max(10px, 1.2vw);
-}
 
 .questions {
     color: #4B4B4B;
@@ -102,4 +96,22 @@ input::-webkit-input-placeholder {
     font-size: 0.8vw;
     color: #acacac;
     margin-left: 1vw;
+}
+
+.inputDiferentao {
+    border: transparent;
+    border-radius: 0vw;
+    width: 12vw;
+    margin-left: 0.4vw;
+}
+
+.oNome {
+    width: 14vw;
+    height: 2.5vw;
+}
+
+.inputGrandao {
+    margin-right: 2vw;
+    width: 16vw;
+    height: 2.5vw;
 }

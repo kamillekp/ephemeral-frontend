@@ -14,13 +14,14 @@ import catProfileLT from '../../assets/catProfileLT.jpeg';
 export default function LTProfile () {
     const [profileLT, setProfile] = useState('');
     const [texto, setText] = useState('');
+    const [imagem, setImagem] = useState('');
     const [coment, setComent] = useState([]);
     const [tel, setTel] = useState('');
 
     const [verificaToken, setVerToken] = useState(true);
 
     const id = localStorage.getItem('Token');
-    let {idUser} = useParams()
+    let {idUser} = useParams();
     
     useEffect (() => {
         if(!id) {
@@ -35,8 +36,13 @@ export default function LTProfile () {
             const response = await api.get(`coment/search/destinatariolt/${idUser}`);
             setComent(response.data);
         }
+        async function takeImagem () {
+            const response = await api.get(`lt/ownImagens/${idUser}`);
+            setImagem(response.data);
+        }
         takeProfileLT();
         takeComents();
+        takeImagem();
     },  []);
 
     async function openProcess () {
@@ -90,7 +96,7 @@ export default function LTProfile () {
                         </div>
 
                         <div className="centerProfile">
-                            <div className='imgfake'></div>
+                            <img src={imagem.url} className='imgfake'></img>
                             <p>{profileLT.nome}</p>
                             <p>{profileLT.nomeUser}</p>
                         </div>

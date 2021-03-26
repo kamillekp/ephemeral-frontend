@@ -43,7 +43,7 @@ form input {
 }
 
 input::-webkit-input-placeholder {
-    font-size: max(20px, 1.5vw);
+    font-size: 1.5vw;
 }
 
 .link {

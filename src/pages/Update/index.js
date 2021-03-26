@@ -10,7 +10,8 @@ import Rodape from '../../templates/Rodape';
 import ContentRodape1 from '../../templates/ContentRodape1';
 import Rodape2 from '../../templates/Rodape2';
 
-export default function Update() {     
+export default function Update() {  
+    const [imagem, setImagem] = useState([]);   
     const [senha, setSenha] = useState('');
     const [dataNasc, setDataNascimento] = useState('');
     const [nome, setNome] = useState('');
@@ -110,12 +111,21 @@ export default function Update() {
                     dividirDespesas}
             }
 
-            console.log(dataLT);
             localStorage.setItem('Atividade', atividade);
 
             if(idade >= 18) {
                 await api.put(`user/settings/update/${id}`, dataProtetor);
                 await api.put(`lt/settings/update/${id}`, dataLT);
+
+                if(imagem.length > 0) {
+                    console.log('entrou')
+                    const data = new FormData();
+                    data.append('file', imagem[0])
+                    
+                    await api.delete(`user/deleteImagens/${id}`);
+                    await api.post(`user/imagens/${id}`, data);
+                }
+
                 history.push('/myProfile');
             }
             else {
@@ -208,12 +218,16 @@ export default function Update() {
                                 <input type="numeric" placeholder="Nº de telefone" maxLength="9" required pattern='9[0-9]{8}' title='9 obrigatório no início // apenas números'
                                 value={numeroTel}
                                 onChange={e => setNumTel(e.target.value)}/> 
+
+                                <input type="file" maxLength="70" className ='inputDiferentao' 
+                                       onChange={e => setImagem(e.target.files)}/><br/>
     
+                            
+                                <h4>Endereço</h4>
                                 <input type="text" placeholder="Estado (UF)" maxLength="2" required pattern='[A-Z]{2}' title='Apenas letras maiúsculas'
                                 value={estado}
                                 onChange={e => setEstado(e.target.value)}/> 
-                                
-                                <h4>Endereço</h4>
+
                                 <input type="text" placeholder="Cidade" maxLength="70" required 
                                 value={cidade}
                                 onChange={e => setCidade(e.target.value)}/>

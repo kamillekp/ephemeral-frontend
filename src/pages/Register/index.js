@@ -10,7 +10,8 @@ import Rodape from '../../templates/Rodape';
 import ContentRodape1 from '../../templates/ContentRodape1';
 import Rodape2 from '../../templates/Rodape2';
 
-export default function Register() { 
+export default function Register() {
+    const [imagemA, setImagem] = useState([]);
     const [nomeUser, setUserName] = useState('');
     const [senha, setSenha] = useState('');
     const [dataNasc, setDataNascimento] = useState('');
@@ -83,7 +84,14 @@ export default function Register() {
 
             console.log(forEmail, forNome, idade)
             if(forEmail !== true && forNome !== true && idade >= 18) {
-                await api.post('user', {nomeUser, senha, email, dataNascimento, ddd, numeroTel, nome, cidade, bairro, estado, complemento, atividade, opcaoTipoAnimal, opcaoSexo, ajudaEmergencia, opcaoAnimalEspecial, dividirDespesas, tamAnimal})          
+                const idU = await api.post('user', {nomeUser, senha, email, dataNascimento, ddd, numeroTel, nome, cidade, bairro, estado, complemento, atividade, opcaoTipoAnimal, opcaoSexo, ajudaEmergencia, opcaoAnimalEspecial, dividirDespesas, tamAnimal})   
+                console.log(idU.data)
+
+                const data = new FormData();
+                data.append('file', imagemA[0])
+
+                console.log(data);
+                await api.post(`user/imagens/${idU.data}`, data);
                 history.push('/');  
             }
             else {
@@ -118,15 +126,15 @@ export default function Register() {
                 <div>
                     <form method="post" onSubmit={registrar}>
                         <h4>Dados pessoais</h4>
-                        <input type="text" placeholder="@username" maxLength="15" minLength="2" required pattern='@{1}[\wãõáí.]+' title='@ obrigatório no início' onBlur={testeNome}
+                        <input type="text" placeholder="@username" maxLength="15" minLength="2" required pattern='@{1}[\wãõáí.]+' title='@ obrigatório no início' onBlur={testeNome} 
                         value={nomeUser}
                         onChange={e => setUserName(e.target.value)}/> 
                     
-                        <input type="password" placeholder="Senha" maxLength="15" required pattern='[A-Za-z0-9]+' title='Apenas números e letras'
+                        <input type="password" placeholder="Senha" maxLength="15" required pattern='[A-Za-z0-9]+' title='Apenas números e letras' 
                         value={senha}
                         onChange={e => setSenha(e.target.value)}/> 
 
-                        <input type="date" placeholder="Data de nascimento" required pattern='\d{2}\/\d{2}\/\d{4}' onBlur = {testaIdade}
+                        <input type="date" placeholder="Data de nascimento" required pattern='\d{2}\/\d{2}\/\d{4}' onBlur = {testaIdade} 
                         value={dataNasc}
                         onChange={e => setDataNascimento(e.target.value)}/> 
                         {idade < 18 && idade !== '' && (
@@ -142,30 +150,33 @@ export default function Register() {
                         
                         <br/>
 
-                        <input type="email" placeholder="email@gmail.com" maxLength="100" required pattern='^[a-z0-9._]+@gmail.com$' title='prefixo@gmail.com // deve inciar com letra minúscula' onBlur={testeEmail}
+                        <input type="email" placeholder="email@gmail.com" maxLength="100" required pattern='^[a-z0-9._]+@gmail.com$' title='prefixo@gmail.com // deve inciar com letra minúscula' onBlur={testeEmail} 
                         value={email}
                         onChange={e => setEmail(e.target.value)}/>
 
-                        <input type="text" placeholder="Nome Sobrenome" maxLength="70" required 
+                        <input type="text" placeholder="Nome Sobrenome" maxLength="70" required className='oNome'
                         value={nome}
-                        onChange={e => setNome(e.target.value)}/> <br/>
+                        onChange={e => setNome(e.target.value)}/> 
+                        
+                        <input type="file" maxLength="70" required className ='inputDiferentao' 
+                               onChange={e => setImagem(e.target.files)}/><br/>
                         {forEmail === true && (
                             <div className='avisoNom'>
                                 <p className='aviso'>Esse email já existe</p>
                             </div>
                         )}
                         
-                        <input type="numeric" placeholder="DDD" maxLength="2" required pattern='[0-9]{2}' title='Apenas números'
+                        <input type="numeric" placeholder="DDD" maxLength="2" required pattern='[0-9]{2}' title='Apenas números' 
                         value={ddd}
                         onChange={e => setDDD(e.target.value)}/>
 
-                        <input type="numeric" placeholder="Nº de telefone" maxLength="9" required pattern='9[0-9]{8}' title='9 obrigatório no início // apenas números'
+                        <input type="numeric" placeholder="Nº de telefone" maxLength="9" required pattern='9[0-9]{8}' title='9 obrigatório no início // apenas números' 
                         value={numeroTel}
                         onChange={e => setNumTel(e.target.value)}/> 
 
             
                         <h4>Endereço</h4>
-                        <input type="text" placeholder="Estado (UF)" maxLength="2" required pattern='[A-Z]{2}' title='Apenas letras maiúsculas'
+                        <input type="text" placeholder="Estado (UF)" maxLength="2" required pattern='[A-Z]{2}' title='Apenas letras maiúsculas' 
                         value={estado}
                         onChange={e => setEstado(e.target.value)}/> 
 
